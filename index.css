@@ -7,29 +7,38 @@ body {
   background-color: #00d1d1;
 }
 
-body > div {
-  border: 5px solid;
-  background-color: burlywood;
+.grid-container {
+  border: 5px solid burlywood;
+  width: 320px;
+  height: 320px;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   padding: 10px;
-}
-
-div div {
-  width: 50px;
-  height: 50px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: black;
-}
-
-div .items-2 {
   background-color: brown;
 }
 
-div .item-1 {
-  background-color: #ffffff;
+.grid-top {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-item {
+  width: 40px;
+  height: 40px;
+}
+
+.grid-top:nth-child(odd) > .grid-item:nth-child(odd) {
+  background-color: white;
+}
+
+.grid-top:nth-child(odd) > .grid-item:nth-child(even) {
+  background-color: black;
+}
+
+.grid-top:nth-child(even) > .grid-item:nth-child(odd) {
+  background-color: rgb(0, 0, 0);
+}
+
+.grid-top:nth-child(even) > .grid-item:nth-child(even) {
+  background-color: rgb(255, 255, 255);
 }
